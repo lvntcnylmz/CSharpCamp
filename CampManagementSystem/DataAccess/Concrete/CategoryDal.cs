@@ -37,7 +37,7 @@ public class CategoryDal : ICategoryDal
 
     public void Delete(Category category)
     {
-        var categoryToDelete = _categories.SingleOrDefault(c => c.Id == category.Id);
+        var categoryToDelete = GetById(category.Id);
         if (categoryToDelete != null) _categories.Remove(categoryToDelete);
     }
 }

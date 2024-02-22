@@ -42,7 +42,7 @@ public class CourseDal : ICourseDal
 
     public void Delete(Course course)
     {
-        var courseToDelete = _courses.SingleOrDefault(c => c.Id == course.Id);
+        var courseToDelete = GetById(course.Id);
         if (courseToDelete != null) _courses.Remove(courseToDelete);
     }
 }

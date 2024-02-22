@@ -40,7 +40,7 @@ public class InstructorDal : IInstructorDal
 
     public void Delete(Instructor instructor)
     {
-        var instructorToDelete = _instructors.SingleOrDefault(i => i.Id == instructor.Id);
+        var instructorToDelete = GetById(instructor.Id);
         if (instructorToDelete != null) _instructors.Remove(instructorToDelete);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete;
+using Entities.Concrete;
 
 Console.WriteLine("*** Welcome to The Course Management System ***");
 Console.WriteLine("===============================================");
@@ -7,7 +8,7 @@ Console.WriteLine("===============================================");
 Console.WriteLine("\n - Courses - ");
 var courseManager = new CourseManager(new CourseDal());
 var courses = courseManager.GetAll();
-courses.ForEach(c => Console.WriteLine(c.Name));
+courses.ForEach(c => Console.WriteLine(c.Id + " - " + c.Name));
 
 Console.WriteLine("\n - Categories - ");
 var categoryManager = new CategoryManager(new CategoryDal());
